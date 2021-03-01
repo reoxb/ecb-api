@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const InventoryItem = require("./data/InventoryItem");
+const InventoryItem = require("./InventoryItem");
 const app = express();
 
 app.use(cors());
@@ -74,8 +74,8 @@ async function connect() {
   } catch (err) {
     console.log("Mongoose error", err);
   }
-  app.listen(3001);
-  console.log("API listening on localhost:3001");
 }
 
 connect();
+
+module.exports = app;
